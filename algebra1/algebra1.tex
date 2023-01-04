@@ -339,5 +339,181 @@
     x_1y_2 - y_1x_2 = 0
     .\] 
     \section{Смешанное произведение векторов}
+    \begin{definition}[Смешаное произведние векторов]
+        \[
+            ([\vec{a},\vec{b}],\vec{c})
+        .\] 
+    \end{definition}
+    \subsection{Геометрические свойства}
+    \begin{theorem}
+        \begin{enumerate}
+            \item  $\vec{a},\vec{b},\vec{c} \in \Pi \iff ([\vec{a},\vec{b}],\vec{c}) = 0$
+            \item $([\vec{a},\vec{b}],\vec{c}) = \pm V$
+        \end{enumerate}
+    \end{theorem}
+    \subsection{Алгебраические свойства}
+    \begin{theorem}
+        \begin{enumerate}
+            \item $([\vec{a},\vec{b}],\vec{c}) = (\vec{a},[\vec{b},\vec{c}]) = \vec{a}\vec{b}\vec{c}$
+                \item $\vec{a}\vec{b}\vec{c} = \vec{b}\vec{c}\vec{a} = \vec{c}\vec{a}\vec{b} = -\vec{b}\vec{a}\vec{c} = -\vec{a}\vec{c}\vec{b} = -\vec{c}\vec{b}\vec{a}$
+        \end{enumerate}
+    \end{theorem}
+    \subsection{Смешанное произведение через координаты.}
+    \[
+    \vec{a}\vec{b}\vec{c} = x_1(y_2z_3 - z_2y_3) - y_1(x_2z_3 -z_2x_3) + z_1(x_2y_3-y_2x_3) = 
+    \begin{vmatrix} 
+        x_1 & y_1 & z_1 \\
+        x_2 & y_2 & z_2 \\
+        x_3 & y_3 & z_3\\
+    \end{vmatrix} 
+    .\] 
+    \section{Прямая линия на плоскоскости}
+    \subsection{Общее уравнение}
+    \[
+    Ax + By + C = 0
+    .\] 
+    A и B не равны 0 одновременно.
+    \subsection{Неполные уравнеия}
+    \begin{enumerate}
+        \item $Ax + By = 0$ прямая проходит через начало координат
+        \item  $Ax + C = 0$ прямая паралелльная оси  $Oy$
+        \item  $By + C = 0$ прямая паралелльная оси  $Ox$
+        \item  $Ax = 0$ ось  $Oy$
+        \item  $By = 0$ ось  $Ox$
+    \end{enumerate}
+    \subsection{Уравнение в отрезках}
+         Если $C \neq 0 \frac{A}{-C}x + \frac{B}{-C}y = 1$ если $A \neq 0 B\neq 0  \frac{x}{a} + \frac{y}{b} = 1, a = -\frac{C}{A} B = -\frac{C}{B}$ 
+    \subsection{Уравнение с угловым коэфициентом}
+    Если $B \neq 0 y = kx + b, k = -\frac{A}{b}, b  = -\frac{C}{B}$
+    \subsection{Канончиеское уравнение прямой.}
+    \begin{definition}
+        Направляющий вектор -- ненулевой вектор параллельный данный прямой.
+    \end{definition}
+    Надо найти уравнение прямой, проходящкй через $M_1(x_1,y_1)$ и имеющей заданный направляющий вектор $\vec{q} = \{l,m\}$. $M(x,y)$ лежит на прямой только тогда когда  $\vec{M_1M} \parallel \vec{q}$
+    \[
+    \frac{x - x_1}{l} = \frac{y  - y_1}{m}
+    .\] 
+    \subsection{Параметрические уравнения}
+    \[
+    \begin{cases}
+        x = x_1 + lt\\
+        y = y_1 + mt
+    \end{cases}
+    .\] 
+    \subsection{Векторное уравнение}
+    \[
+    \vec{r} = \vec{r_0} +t \vec{1}
+    .\] 
+    \section{Нормальное уравнение прямой.}
+    У нас есть прямая L. Прямая n проходит через начало координат и перпендикулярна n. 
+    P точка их пересечения. $\vec{n}$ единичный вектор выбранный на OP
+    \[
+        \vec{n} = \{\cos{\theta}, \sin{\theta}\}
+    .\] 
+    \[
+        x \cos{\theta} + y \sin{\theta}  - o
+    .\] 
+    \section{Уравнение плоскости}
+    \paragraph{Комплексные числа и многочлены}
+    \section{Комплексные числа}
+    \begin{definition}
+        Комплексное число -- пара действительных чисел с заданными операциями сложения и умножения
+        \[
+        \alpha = (a,b)
+        .\] 
+        \[
+        \beta = c,d
+        .\] 
+        \[
+        \alpha + \beta = (a + c, b + d)
+        .\] 
+        \[
+        \alpha*\beta = (ac - bd,ad + bc)
+        .\] 
+    \end{definition}
+    \subsection{Свойства сложения}
+    \begin{enumerate}
+        \item $\alpha + \beta = \beta + \alpha$
+        \item  $(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$
+        \item $\exists ! \mathbf{0} : \forall  \alpha : \alpha + \mathbf{0} = \alpha, \mathbf{0} = (0,0)$
+        \item $\forall  \alpha \exists ! -\alpha : \alpha + (-\alpha) = \mathbf{0}$ $-\alpha = (-a , -b)$
+    \end{enumerate}
+    \subsection{Свойства умножения}
+    \begin{enumerate}
+        \item $\alpha * \beta = \beta * \alpha$
+        \item  $(\alpha *\beta) * \gamma = \alpha * (\beta * \gamma)$
+        \item  $\exists! \mathbf{1} \forall \alpha \alpha * \mathbf{1} = \alpha, \mathbf{1} = (1,0)$
+        \item $(\alpha + \beta)*\gamma = \alpha * \gamma + \beta*\gamma$
+        \item  $\forall  \alpha \neq 0 \exists  ~ \alpha^{-1} : \alpha * \alpha^{-1}=  1, \alpha^{-1} = (\frac{a}{a^2 + b^2}, -\frac{b}{a^2 + b^2})$
+    \end{enumerate}
+    \subsection{Мнимая единица}
+    \[
+    i = (0,1)
+    .\] 
+    \[
+    i^2 = (-1, 0)
+    .\] 
+    \[
+    i^2 + (1, 0) = 0
+    .\] 
+    \subsection{Алгебраическая форма записи}
+    \[
+    \alpha = (a,b) = (a,0) + (0,b) \implies \alpha = a + bi
+    .\] 
+    \[
+    \alpha  \pm \beta = (a \pm c) + i(b \pm d)
+    .\] 
+    \[
+    \alpha * \beta = (ac - bd) + i(ad + bc)
+    .\] 
+    \subsection{Тригонометрическая форма записи комплексных чисел.}
+    Комплексное число имеет интерапретацию ввиде точки на декартовых координатах, с осями $Re, Im$,  $r = |\alpha| = \sqrt{a^2 + b^2} $ -- расстояние до точки, $\theta$ -- угол между вещественной осью и радиус вектором из начала координат в точку.
+    Таким образом комплексное число  $\alpha = a+bi = r(\cos{\theta} + i\sin{\theta})$
+     \[
+         z_1 * z_2 = r_1(\cos{\alpha} + i\sin{\alpha}) * r_2(\cos{\beta} + i\sin{\beta}) + r_1r_2 (\cos{( \alpha + \beta )} + i \sin{( \alpha + \beta )})
+    .\] 
+    \[
+        \frac{z_1}{z_2} = \frac{r_1}{r_2} (\cos{( \alpha - \beta )} + i \sin{( \alpha - \beta )})
+    .\]
+    \section{Возведение в степень.}
+    \subsection{В алгебраической форме.}
+    \[
+    z = a + ib
+    .\] 
+    \[
+        z^{n} = (a + ib)^{n} = \sum_{i=0}^{n} \binom{n}{i} a^{n - i}(bi)^{i}
+    .\] 
+    \[
+    i^{4k} = 1
+    .\] 
+    \[
+    i^{4k + 1} = i
+    .\] 
+    \[
+        i^{4k + 2} = -1
+    .\] 
+    \[
+        i^{4k + 3} = -i
+    .\] 
+    \subsection{В тригонометрической форме.}
+    \begin{theorem}
+        \[
+            \alpha = r (\cos{\theta} + i \sin{\theta})
+        .\] 
+        \[
+            a^{n} = r^{n} (\cos{n\theta} + \sin{n\theta})
+        .\] 
+    \end{theorem}
+    \begin{proof}
+        По индукции. База очевидна
+        \[
+            a * a^{n} = r^{n} (\cos{n\phi} + i\sin{n\phi}) r (\cos{\phi} + i\sin{\phi}) = r^{n + 1} (\cos{((n + 1) \phi)} + i \sin{((n + 1) \phi)})
+        .\] 
+    \end{proof}
+    \section{Извлечение корня в тригонометрической форме}
+    \[
+        \sqrt[n]{r( \cos{\alpha} + i\sin{\alpha} )}  =
+        \sqrt[n]{r}(\cos{\frac{\alpha + 2\pi k}{2}} + i\sin{\frac{\alpha + 2\pi k}{n}}), k = 0\dots n - 1
+    .\] 
 \end{document}
 
