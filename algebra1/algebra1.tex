@@ -1,0 +1,343 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+\newtheorem{theorem}{Теорема}
+\newtheorem{definition}{Определение}
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{lemma}[theorem]{Лемма}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\title{Экзамен по алгебре и геометрии}
+\author{Титилин Александр}
+\date{}
+\begin{document}
+    \maketitle
+    \paragraph{Ананлитическая Геометрия}
+    \section{Геометрические векторы.}
+    \begin{definition}
+        Вектор -- направленный отрзок, который характеризуется длиной и направлением.$\overline{AB}$ -- вектор, А -- начало (точка приложения),
+        B -- конец.
+        $|AB|$ -- Длина вектра
+    \end{definition}
+    \begin{definition}
+       Векторы коллинеарны ($\overline{a} \parallel \overline{b}$) , если $L$ -- прямая,  $\overline{a} \parallel L \land \overline{b} \parallel L$
+    \end{definition}
+    \begin{definition}
+        $a_0$ орт вектора $\overline{a}$ , если $\overline{a_0}$ сонаправлен $\overline{a} \land |\overline{a_0} = 1$
+    \end{definition}
+    \begin{definition}
+        $\overline{a} = \overline{b}$ := $|a| = |b| \land a\parallel b \land$ а сонаправлен b.
+    \end{definition}
+    \begin{definition}
+        Суммой $\overline{a}$ и $\overline{b}$ называют вектор, идущий из начала $\overline{a}$ в конец $\overline{b}$, если $b$ приложен к концу  $\overline{a}$
+    \end{definition}
+    \includegraphics{img/vsum.pdf}
+    \begin{definition}
+        Произведение вектора на число -- вектор, коллинеарный исходногому и имеющий его длину умноженную на число
+    \end{definition}
+    \begin{theorem}
+       \begin{enumerate}
+           \item $\overline{a} + \overline{b} = \overline{b} + \overline{a}$
+                \item
+                    $(\overline{a} + \overline{b}) + \overline{c} = \overline{a} + (\overline{b} + \overline{c})$
+                 \item
+                     $\exists!  \overline{0}: \overline{a} + \overline{0} = \overline{a}$
+                 \item $\forall \overline{a} \exists  -\overline{a} : \overline{a}
+                     + (-\overline{a}) = \overline{0}$
+                \item $\alpha(\beta \overline{a}) = ( \alpha\beta ) \overline{a}$
+                \item $( \alpha + \beta ) \overline{a} = \alpha \overline{a} + \beta \overline{a}$
+       \end{enumerate} 
+    \end{theorem}
+    \section{Линейная зависимость векторов.}
+    \begin{definition}
+        Набор векторов $a_1,a_2,a_3,\dots,a_{n}$ называется линейно зависимым, если существует набор чисел, где хоть одно не равно 0 и $\alpha_1 a_1 + \alpha_2 a_2 + \dots \alpha_{n}a_{n} = 0 $
+    \end{definition}
+    \begin{theorem}
+         \begin{enumerate}
+             \item 
+        $\overline{0}$ -линейно зависимый
+    \item $a_1,\dots,0,\dots,a_n$ - линейно зависимый
+        \item
+            $a_{1}, \dots,a_{i}$ - линейно зависимый,$a_1,\dots a_{i},\dots a_{n}$ -- линейно зависимый.
+        \item
+            $a_1, \dots, a_{i},\dots,a_{n}$ - линейно зависимый $\iff$  $a_{i} =
+            \sum_{j \neq i} a_{i}$
+         \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        \begin{enumerate}
+            \item $1 * \overline{0} = \overline{0}$ 
+                \item
+                    $0a_1 + \dots + 1 * \overline{0} + \dots + 0 * \overline{a_{n}}= 0$
+                    \item
+                        $\exists {\alpha_1 \dots \alpha_{i}} \sum \alpha_{j}a =0 ~ 
+                        \alpha_1 a_1 + \dots \alpha_{i}a_{i} + \dots 0*a_{n} = 0$
+        \end{enumerate}
+    \end{proof}
+    \section{Линейная зависимость трех и четырех векторов в плоскости и пространстве.}
+    \begin{theorem}
+        $\overline{a}, \overline{b}$ линейно зависимые $\iff$  $\overline{a} \parallel \overline{b}$
+    \end{theorem}
+    \begin{proof}
+        $\rightarrow$  $\alpha \overline{a} + \beta \overline{b} = \overline{0}$.
+        Пусть $\beta \neq 0 \implies \overline{b} = (-\frac{\alpha}{\beta}) \overline{a} \implies a \parallel b$ \\
+        $\leftarrow$  $\overline{b} = \lambda \overline{a} \implies \overline{b} - \lambda \overline{a} = \overline{0}$
+    \end{proof}
+    \begin{theorem}
+        $\overline{a},\overline{b},\overline{c}$ линейно зависимые $\iff$  $\overline{a}, \overline{b},\overline{c} \parallel \Pi$
+    \end{theorem}
+    \begin{proof}
+        $\rightarrow$.  $\alpha \overline{a} + \beta \overline{b} + \gamma \overline{c} \gamma \neq 0 \implies \overline{c} = -\frac{\alpha}{\gamma}\overline{a} - \frac{\beta}{\gamma} \overline{b}$. Векторы лежат в одной плоскости.\\
+        $\rightarrow$. Если одна из пар коллинеарна, то она линейно зависимая, и мы можем просто оставшийся вектор на 0 умножить. Иначе переносим все прямые на одну плоскоскость в одну точку. Через конец вектора с проводим прямые паралельные  a и b.
+        Эти прямые пересекают  $\nu \overline{a}$ и $\mu \overline{b}$. $\overline{ c} = \nu \overline{a} + \mu \overline{b}$
+    \end{proof}
+    \begin{theorem}
+        Любые четыре вектора линейно зависимы.
+    \end{theorem}
+    \begin{proof}
+        Если 3 вектора компланарны, то все понятно.
+    \end{proof}
+    \section{Проекция вектора на ось.}
+    \begin{definition}
+        u -- ось (направленная прямая), $\vec{a} = \vec{AB}$, $A' B'$ основания перпендикуляров, опущенных на  $A, B$.  $\pm \mid \vec{A'B'} \mid$ -- проекция $\vec{a}$ на u.
+        Знак зависит от направления вектора. Если он сонаправлен с осью, то плюс иначе минус.
+    \end{definition}
+    \begin{theorem}
+        Проекция вектора $\vec{a}$ на ось u равна $|\vec{a}| * \cos{\phi}$, где $\phi$  угол наклона вектора к оси.
+    \end{theorem}
+    \begin{theorem}
+        $Pr_u( \vec{a} + \vec{b} ) = Pr_{u}\vec{a} + Pr_{u}\vec{b}$\\
+        $Pr_{u}(\alpha \vec{a}) = \alpha Pr_{u} \vec{a}$
+    \end{theorem}
+    \section{Базис аффиные координаты}
+    \begin{definition}[базис в пространстве]
+        $\overline{a},\overline{b},\overline{c}$ линейно независимы. Они образует базис если $ \forall \overline{d} \exists  \lambda ,\mu, \nu: \overline{d} = \lambda \overline{a} + \mu \overline{b} + \nu \overline{c}$
+    \end{definition}
+    \begin{definition}[базис на плоскости]
+        $\vec{a}, \vec{b} $ линейно независимы, они образуют базис если $\forall  \vec{c} : \exists \lambda, \nu ~ \vec{c} = \lambda \vec{a} + \nu \vec{b}$
+    \end{definition}
+    \begin{theorem}
+        Любые три линейно-независимые вектора однозначно раскладываются по базису относительно четвертого.
+    \end{theorem}
+    \begin{proof}
+        $\vec{d} = \lambda \vec{a} + \nu \vec{b} + \mu \vec{c} \land \vec{d} = \alpha \vec{a} + \beta \vec{b} + \gamma \vec{c}  (\lambda - \alpha)\vec{a} + (\nu - \beta) \vec{b} + (\mu - \gamma) \vec{c} = \vec{0} $. Векторы линейно независимые $\lambda = \alpha , \mu =\beta , \nu = \gamma$
+    \end{proof}
+    \begin{theorem}
+        При сложение двух векторов их координаты относительно одного базиса складываются. При умножении на число умножаются на это число.
+    \end{theorem}
+    \begin{proof}
+        \[
+        \vec{d_1} = \alpha_1 \vec{a} + \beta_1 \vec{b} + \gamma_1 \vec{c}
+        .\] 
+        \[
+        \vec{d_2} = \alpha_2 \vec{a} + \beta_2 \vec{b} + \gamma \vec{c}
+        .\] 
+        \[
+        \vec{d_1} + \vec{d_2} = (\alpha_1 + \alpha_2) \vec{a} + (\beta_1 + \beta_2)\vec{b} + (\gamma_1 + \gamma_2) \vec{c}
+        .\] 
+        \[
+        \lambda \vec{d_1} = (\lambda \alpha_1)\vec{a} + (\lambda \beta_1)\vec{b} + (\lambda  \gamma_1) \vec{c}
+        .\] 
+        \begin{definition}
+            Аффиные координаты задаются базисом $\vec{a}, \vec{b},\vec{c}$ 
+            и точкой O (началом координат)
+        \end{definition}
+    \end{proof}
+    \begin{definition}[Декартовы координаты]
+        $\vec{i},\vec{j},\vec{k}$ -- взаимно ортогональные векторы длины 1. Разложение по такому базису -- декартовы координаты
+    \end{definition}
+    \begin{theorem}
+        Декартовы координаты вектора $\vec{d}$ равны его проекциям на оси $Ox Oy Oz$
+    \end{theorem}
+    \begin{theorem}
+        $\alpha,\beta,,\gamma$ углы наклона вектора  $\vec{d}$  к осям $Ox,Oy,Oz$
+         \[
+             \cos^2{\alpha} + \cos^2{\beta} + \cos^2{\gamma} = 1
+        .\] 
+    \end{theorem}
+    \begin{proof}
+        \[
+            \vec{d} = \{X,Y,Z \}
+        .\] 
+        \[
+            X = |\vec{d}| \cos{\alpha}
+        .\] 
+        \[
+            \cos{\alpha} = \frac{X}{\sqrt{X^2 + Y^2 + Z^2}}
+        .\] 
+        \[
+            \cos{\beta} = \frac{Y}{\sqrt{{X^2 + Y ^2 + Z ^2}} }
+        .\] 
+        \[
+            \cos{\gamma} = \frac{Z}{\sqrt{X^2 + Y^2 + Z ^2} }
+        .\] 
+        Каждую из этих хреней в квадрат возводим и складываем теорема доказана.
+    \end{proof}
+    \begin{definition}
+        M делит отрезок $M_1M_2$ в отношении $\lambda$ , если  $\vec{M_1M} = \lambda \vec{MM_2}$
+    \end{definition}
+    \[
+    M = (x,y,z)
+    .\] 
+    \[
+    M_1 = (x_1,y_1,z_1)
+    .\] 
+    \[
+    M_2 = (x_2,y_2,z_2)
+    .\] 
+    \[
+        \{x_1 - x, y_1 - y,z_1 - z\} = \lambda \{x_2 - x,y_2 - z,z_2 - z\}
+    .\] 
+    \section{Скалярное произведение}
+    \begin{definition}
+        $(\vec{a},\vec{b}) = |\vec{a}| * |\vec{b}|\cos{(\vec{a},\vec{b})}$ -- скалярное произведение векторов $\vec{a}, \vec{b}$. Так же выражается через проекции.
+        \[
+            |\vec{b}| \cos{(\vec{a},\vec{b})} = Pr_{a} \vec{b} \implies (\vec{a},\vec{b}) = |\vec{a}| Pr_{a}\vec{b}
+        .\] 
+        \[
+            |\vec{a}| \cos{(\vec{a},\vec{b})} = Pr_{b}\vec{a} \implies (\vec{a},\vec{b}) = |\vec{b}| Pr_{b} \vec{a}
+        .\] 
+    \end{definition}
+    \begin{theorem}
+        $\vec{a} \perp \vec{b} \iff (\vec{a}, \vec{b}) = 0$
+    \end{theorem}
+    \begin{proof}
+        $\rightarrow$.  $\cos{(\vec{a},\vec{b})} = 0 \implies (\vec{a},\vec{b}) = 0$\\
+        $\leftarrow$.  $(\vec{a},\vec{b}) = 0 \implies |a| = 0 \lor |b| = 0 \lor \cos{(\vec{a},\vec{b})} = 0$.
+    \end{proof}
+    \begin{theorem}
+        Если угол между векторами меньше $\frac{\pi}{2}$ cкалярное произведение больше нуля. Иначе оно меньше нуля.
+    \end{theorem}
+    \subsection{Алгебраические свойства.}
+    \begin{theorem}
+        \begin{enumerate}
+            \item $(\vec{a},\vec{b}) = (\vec{b},\vec{a})$
+            \item $(\vec{a} + \vec{b},\vec{c}) =(\vec{a},\vec{c}) + (\vec{b}, \vec{c})$
+            \item $(\alpha \vec{a},\vec{b}) = \alpha (\vec{a},\vec{b})$
+            \item $(\vec{a},\vec{a}) > 0$ если $a \neq 0$ , $(\vec{a},\vec{a})=0$, если $\vec{a} = 0$
+        \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        \begin{enumerate}
+            \item очев
+            \item $(\vec{a} + \vec{b},\vec{c}) = |c| Pr_{c}(\vec{a} + \vec{b}) =
+                |c|Pr_{c}\vec{a} + |c| Pr_{c}\vec{b} = (\vec{a},\vec{c}) + (\vec{b},\vec{c})$
+            \item $(\alpha \vec{a},\vec{b}) = |b|Pr_{b}(\alpha a) = \alpha |b| Pr_{\vec{b}}(\vec{a}) = \alpha (\vec{a},\vec{b})$
+            \item $(\vec{a},\vec{a}) = |a|^2$
+        \end{enumerate}
+    \end{proof}
+    \subsection{Скалярное произведение в координатах}
+    \begin{theorem}
+        \[
+            \vec{a} = \{x_1,y_1,z_1\}
+        .\] 
+        \[
+            \vec{b} = \{x_2,y_2,z_2\}
+        .\] 
+        \[
+            (\vec{a},\vec{b}) = x_1x_2 + y_1y_2 + z_1z_2
+        .\] 
+    \end{theorem}
+    \begin{proof}
+        \[
+            \vec{a} = x_1 \vec{i} + y_1 \vec{j} + z_1 \vec{k}
+        .\] 
+        \[
+        \vec{b} = x_2 \vec{i} + y_2 \vec{j} + z_2 \vec{k}
+        .\] 
+        У одинаковых ортов скалярное произведение равно 1, у разных 0.
+    \end{proof}
+    \subsection{Угол между векторами}
+    \[
+    \cos(\vec{a},\vec{b}) = \frac{(\vec{a},\vec{b})}{|\vec{a}||\vec{b}|} =
+    \frac{x_1x_2 + y_1 y_2 + z_1 z_2}{\sqrt{x_1^2 + y_1^2 + z_1 ^2} \sqrt{x_2^2 + y_2^2 + z_2^2}}
+    .\] 
+    \section{Ортогональость векторов}
+    \[
+    \vec{a} \perp \vec{b} \iff (\vec{a},\vec{b}) = 0 \implies x_1x_2 +y_1y_2 +z_1z_2 = 0
+    .\] 
+    \section{Векторное произведение}
+    Назовем упорядоченную тройку векторов $\vec{a},\vec{b},\vec{c}$ правой, если
+    c конца $\vec{c}$ кратчайщий поворот от $\vec{a}$ к $\vec{b}$ виден наблюдателю против часовой стрелки
+    \begin{definition}[Векторное произведение]
+        $\vec{c} = [\vec{a},\vec{b}]$ является векторным произведением $\vec{a},\vec{b}$, если
+        \begin{enumerate}
+            \item $|\vec{c}| = |\vec{a}||\vec{b}| \sin{(\vec{a},\vec{b})}$
+            \item $c \perp a, c \perp b$
+            \item  $\vec{a} ,\vec{b} ,\vec{c}$ правая тройка
+        \end{enumerate}
+    \end{definition}
+    \subsection{Геометрические свойства}
+    \begin{theorem}
+        \begin{enumerate}
+            \item $\vec{a} \parallel \vec{b} \iff [\vec{a},\vec{b}] = 0$
+            \item $[\vec{a}\vec{b}]$ равен площади паралеллограмма, со сторонами $a,b$
+        \end{enumerate}
+        \begin{proof}
+            \begin{enumerate}
+                \item $\rightarrow$  $\sin{( \vec{a},\vec{b} )} = 0$\\
+                    $\leftarrow$  $|a| = 0 \lor |b| = 0 \lor \sin{(\vec{a},\vec{b})} = 0$
+                    \item
+                        Формула из школы
+            \end{enumerate}
+        \end{proof}
+    \end{theorem}
+    \subsection{Алгебраические свойства}
+    \begin{theorem}
+        \begin{enumerate}
+            \item $[\vec{b},\vec{a}] = - [\vec{a},\vec{b}]$
+            \item $[\alpha \vec{a},\vec{b}] = \alpha [\vec{a},\vec{b}]$
+            \item $[\vec{a} + \vec{b},\vec{c}] = [\vec{a},\vec{c}] + [\vec{b},\vec{c}]$
+            \item $ \forall  \vec{a}, [\vec{a},\vec{a}] = 0$
+        \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        
+    \end{proof}
+    \subsection{Векторное произведение в координатах}
+    \[
+    \vec{a} = x_1 \vec{i} + y_1 \vec{j} + z_1 \vec{k}
+    .\] 
+    \[
+    \vec{b} = x_2 \vec{i} + y_2 \vec{j} + z_2 \vec{k}
+    .\] 
+    \[
+        [\vec{a},\vec{b}] = x_1x_2 [\vec{i},\vec{i}] +
+        x_1 y_2 [\vec{i},\vec{j}] +
+        x_1z_2[\vec{i},\vec{k}] +
+        y_1x_2[\vec{j},\vec{i}] +
+        y_1y_2[j,j] +
+        y_1z_2[\vec{j},\vec{k}] +
+        z_1x_2[\vec{k},\vec{i}] +
+        z_1y_2[\vec{k},\vec{j}] +
+        z_1z_2[\vec{k},\vec{k}]
+    .\] 
+    \[
+    = (y_1z_2 - z_1y_2)\vec{i} - (x_1z_2-z_1x_2)\vec{j} + (x_1y_2 - y_1x_2)\vec{k} =
+    .\] 
+    \[
+    \begin{vmatrix}
+        i & j & k\\
+        x_1 & y_1 & z_1\\
+    x_2 & y_2 & z_2\\
+\end{vmatrix}
+    .\] 
+    \subsection{Условие коллинеарности векторов}
+    $a \parallel \vec{b} \iff [\vec{a},\vec{b}] = 0 \implies $
+    \[
+    y_1  z_2 - z_1 y_2 = 0
+    .\] 
+    \[
+    x_1z_2 - z_1x_2 = 0
+    .\] 
+    \[
+    x_1y_2 - y_1x_2 = 0
+    .\] 
+    \section{Смешанное произведение векторов}
+\end{document}
+
