@@ -12,6 +12,7 @@
 \newtheorem{lemma}[theorem]{Лемма}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+\newcommand{\divisible}{\mathop{\raisebox{-2pt}{\vdots}}}
 \title{Экзамен по алгебре и геометрии}
 \author{Титилин Александр}
 \date{}
@@ -515,5 +516,51 @@
         \sqrt[n]{r( \cos{\alpha} + i\sin{\alpha} )}  =
         \sqrt[n]{r}(\cos{\frac{\alpha + 2\pi k}{2}} + i\sin{\frac{\alpha + 2\pi k}{n}}), k = 0\dots n - 1
     .\] 
+    \section{Многочлены}
+    \begin{definition}
+        Многочлен сумма целых неотрицательных степеней неизвестного с некоторыми числовыми коэффициентами
+    \end{definition}
+    \begin{definition}[Степень многочлена]
+        Cтепень многочлена -- самая большая степень неизвестного с ненулевым коээфициентом.
+    \end{definition}
+    \subsection{Операции над многочленами}
+    \begin{enumerate}
+        \item $f + g = \sum_{k = 0}^{t} (a_{k} + b_{k})x^{k}, t = \max(\deg{f},\deg{g})$
+        \item $f * g = \sum_{k = 0}^{t} ( \sum_{i + j = k} a_{i}b_{j} )x^{k}, t = \deg{f} + \deg{g}$
+    \end{enumerate}
+    \section{Свойства операций над многочленами.}
+    \begin{enumerate}
+        \item $f + g = g + f$
+        \item  $(f + g) + h = f + (g + h)$
+        \item  $\exists!  0 ~ f + 0 = f$
+        \item $\forall  f ~ \exists ! -f : f + (- f) = 0 , -f(x) = \sum_{i = 0}^{n}(-a_{i})x^{i}$
+        \item $fg = gf$
+        \item $(f * g)*h = f * (g * h)$
+        \item $\exists ! 1: \forall f * 1 = f$
+        \item $(f + g) * h = f*h + g*h$
+        \item  $\forall f \neq 0 ~ \exists! f^{-1} : f * f^{-1} = 1$
+    \end{enumerate}
+    \section{Деление с остатком}
+    \[
+        \forall  f, g , \exists ! q,r : f = gq + r , \deg{r} < \deg{g} \lor r = 0
+    .\] 
+    \subsection{Доказательство единственности.}
+    \[
+    f = gq + r, f = \phi q + \psi 
+    .\] 
+    \[
+    g (q - \phi) = \psi   - r
+    .\] 
+    Степень левого многочлена или больше степени $g$ или он 0. Степень левого или меньше или он ноль $q =  \phi, \psi = r$
+    \section{Делимость многочленов.}
+    \begin{definition}
+        g делитель f, если  $f = g * , f \divisible g$
+    \end{definition}
+    \subsection{Свойства}
+    \begin{enumerate}
+        \item $f \divisible g \land  g \divisible h \implies f \divisible h$
+        \item $f \divisible h \land g \divisible h \implies (f \pm g) \divisible h$
+        \item  $f \divisible h  ~ \forall{g} ~ fg \divisible h$
+    \end{enumerate}
 \end{document}
 
